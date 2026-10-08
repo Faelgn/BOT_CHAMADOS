@@ -1,4 +1,4 @@
-# 🎫 BOT_CHAMADOS
+# BOT_CHAMADOS
 
 [![CI](https://github.com/Faelgn/BOT_CHAMADOS/actions/workflows/ci.yml/badge.svg)](https://github.com/Faelgn/BOT_CHAMADOS/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
@@ -15,7 +15,7 @@ produtividade, ranking e envio do historico por e-mail.
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Abertura de chamado** por botao no canal de painel, com selecao de
   setor/categoria, descricao, detalhe opcional e anexo de imagens.
@@ -32,7 +32,7 @@ produtividade, ranking e envio do historico por e-mail.
   canal de logs.
 - **Backups** automatizados do codigo e da base `ticket_data.json`.
 
-## 🧱 Arquitetura
+## Arquitetura
 
 ```text
 Usuario no Discord
@@ -57,7 +57,7 @@ Usuario no Discord
 
 Detalhes em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
 
-## 📁 Estrutura do repositorio
+## Estrutura do repositorio
 
 ```text
 BOT_CHAMADOS/
@@ -93,7 +93,7 @@ BOT_CHAMADOS/
 └── LICENSE
 ```
 
-## 🚀 Inicio rapido
+## Inicio rapido
 
 ```bash
 # 1. Clone
@@ -115,7 +115,7 @@ python src/bot.py
 Passo a passo detalhado em [`docs/INSTALACAO.md`](docs/INSTALACAO.md) e
 [`docs/IMPLANTACAO.md`](docs/IMPLANTACAO.md).
 
-## 🐳 Docker
+## Docker
 
 ```bash
 cp .env.example .env      # preencha
@@ -123,7 +123,7 @@ docker compose up -d --build
 docker compose logs -f
 ```
 
-## 🧪 Testes
+## Testes
 
 ```bash
 pip install -r requirements-dev.txt
@@ -134,7 +134,7 @@ pytest                  # testes das funcoes utilitarias
 O pipeline de CI (`.github/workflows/ci.yml`) roda lint, checagem de sintaxe,
 testes e uma varredura por tokens a cada push/PR.
 
-## 🤖 Comandos do bot
+## Comandos do bot
 
 | Comando | Descricao | Permissao |
 | ------- | --------- | --------- |
@@ -146,7 +146,7 @@ testes e uma varredura por tokens a cada push/PR.
 | `/dashboard_atualizar` | Atualiza o dashboard | Equipe TI / Admin |
 | `!sync` | Sincroniza os comandos de barra (dono do bot) | Dono |
 
-## 🔐 Seguranca
+## Seguranca
 
 Leia [`SECURITY.md`](SECURITY.md) e [`docs/SEGURANCA.md`](docs/SEGURANCA.md).
 Resumo:
@@ -157,6 +157,6 @@ Resumo:
 - Cabecalho de e-mail sanitizado e anexos com nome seguro.
 - Se um token vazar: **revogue primeiro**, depois limpe o historico.
 
-## 📜 Licenca
+## Licenca
 
 Distribuido sob a licenca MIT. Veja [`LICENSE`](LICENSE).
