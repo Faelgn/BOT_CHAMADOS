@@ -1,0 +1,18 @@
+services:
+  bot-chamados-ti:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bot-chamados-ti
+    restart: unless-stopped
+    env_file:
+      - .env
+    working_dir: /app
+    command: ["python", "src/bot.py"]
+    environment:
+      DATA_FILE: /app/data/ticket_data.json
+      ATTACHMENTS_DIR: /app/ticket_email_attachments
+    volumes:
+      # Dados persistentes fora da imagem (nunca versionados)
+      - ./data:/app/data
+      - ./ticket_email_attachments:/app/ticket_email_attachments

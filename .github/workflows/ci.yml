@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verificar sintaxe
+        run: python -m py_compile src/bot.py
+
+      - name: Procurar segredos acidentais
+        run: |
+          if grep -rnE "MT[A-Za-z0-9]{20,}\.[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{20,}" src/ ; then
+            echo "Token do Discord detectado no codigo!"; exit 1
+          fi
+          echo "Nenhum token encontrado."

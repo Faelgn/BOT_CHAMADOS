@@ -1,0 +1,8 @@
+# Exemplo de agendamento dos backups (crontab -e)
+# Ajuste /caminho/BOT_CHAMADOS para o diretorio real do projeto.
+
+# Backup validado da base de chamados (diario, 23:00)
+0 23 * * * /caminho/BOT_CHAMADOS/scripts/backup_ticket_data.sh >> /var/log/bot_chamados_backup.log 2>&1
+
+# Backup do codigo (diario, 23:30)
+30 23 * * * /caminho/BOT_CHAMADOS/scripts/backup_codigo.sh >> /var/log/bot_chamados_backup.log 2>&1

@@ -1,0 +1,15 @@
+# Normaliza terminacao de linha
+* text=auto
+
+# Scripts e arquivos de build DEVEM usar LF (rodam em Linux)
+*.sh        text eol=lf
+Dockerfile  text eol=lf
+*.py        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary

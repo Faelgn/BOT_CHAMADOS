@@ -1,0 +1,49 @@
+# ============================================================
+# Segredos e credenciais  (NUNCA versionar)
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+id_rsa
+id_ed25519
+
+# ============================================================
+# Dados sensiveis / dados de pessoas (LGPD)
+# ============================================================
+ticket_data.json
+ticket_data.json.*
+ticket_email_attachments/
+backups/
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# Ambientes virtuais / dependencias
+# ============================================================
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# Sistema / editores / artefatos
+# ============================================================
+*.log
+*.save
+*.bak
+*.tmp
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,25 @@
+[Unit]
+Description=BOT_CHAMADOS - Bot de chamados de TI (Discord)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Ajuste conforme o seu ambiente
+User=botuser
+Group=botuser
+WorkingDirectory=/opt/BOT_CHAMADOS
+EnvironmentFile=/opt/BOT_CHAMADOS/.env
+ExecStart=/opt/BOT_CHAMADOS/venv/bin/python /opt/BOT_CHAMADOS/src/bot.py
+Restart=on-failure
+RestartSec=10
+
+# Endurecimento (hardening)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/BOT_CHAMADOS
+
+[Install]
+WantedBy=multi-user.target

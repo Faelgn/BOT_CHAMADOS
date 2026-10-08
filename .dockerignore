@@ -1,0 +1,31 @@
+# ============================================================
+# Contexto de build (arquivos que NAO vao para a imagem)
+# ============================================================
+# Seguranca: nunca enviar segredos nem dados de pessoas para a imagem
+.env
+.env.*
+ticket_data.json
+ticket_data.json.*
+ticket_email_attachments/
+data/
+backups/
+
+# Ambiente / artefatos
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Versionamento e documentacao (nao precisam estar na imagem)
+.git/
+.gitignore
+.github/
+docs/
+*.md
+LICENSE
+*.log
+*.save
+*.bak
