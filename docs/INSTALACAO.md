@@ -9,7 +9,7 @@
 ## 1. Clonar o repositorio
 
 ```bash
-git clone https://github.com/<SEU_USUARIO>/BOT_CHAMADOS.git
+git clone https://github.com/Faelgn/BOT_CHAMADOS.git
 cd BOT_CHAMADOS
 ```
 

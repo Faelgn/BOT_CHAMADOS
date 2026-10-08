@@ -1,5 +1,10 @@
 # 🎫 BOT_CHAMADOS
 
+[![CI](https://github.com/Faelgn/BOT_CHAMADOS/actions/workflows/ci.yml/badge.svg)](https://github.com/Faelgn/BOT_CHAMADOS/actions/workflows/ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+[![discord.py 2.7.1](https://img.shields.io/badge/discord.py-2.7.1-5865F2.svg)](https://github.com/Rapptz/discord.py)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 Bot de Discord para abertura e gestao de **chamados de TI**: fila de
 atendimento, aceite por tecnicos, threads privadas por chamado, dashboards de
 produtividade, ranking e envio do historico por e-mail.
@@ -71,12 +76,17 @@ BOT_CHAMADOS/
 ├── deploy/
 │   ├── systemd/                # Unidade de exemplo
 │   └── cron/                   # Agendamento dos backups
+├── tests/                      # Testes automatizados (pytest)
+│   ├── conftest.py
+│   └── test_funcoes.py
 ├── .env.example                # Modelo de configuracao (sem segredos)
 ├── .gitignore                  # Bloqueia segredos e dados
 ├── .dockerignore
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
+├── requirements-dev.txt        # pytest + ruff
+├── pyproject.toml              # Config de testes e lint
 ├── CHANGELOG.md
 ├── SECURITY.md
 ├── CONTRIBUTING.md
@@ -87,7 +97,7 @@ BOT_CHAMADOS/
 
 ```bash
 # 1. Clone
-git clone https://github.com/<SEU_USUARIO>/BOT_CHAMADOS.git
+git clone https://github.com/Faelgn/BOT_CHAMADOS.git
 cd BOT_CHAMADOS
 
 # 2. Configure
@@ -112,6 +122,17 @@ cp .env.example .env      # preencha
 docker compose up -d --build
 docker compose logs -f
 ```
+
+## 🧪 Testes
+
+```bash
+pip install -r requirements-dev.txt
+ruff check src tests    # analise estatica
+pytest                  # testes das funcoes utilitarias
+```
+
+O pipeline de CI (`.github/workflows/ci.yml`) roda lint, checagem de sintaxe,
+testes e uma varredura por tokens a cada push/PR.
 
 ## 🤖 Comandos do bot
 

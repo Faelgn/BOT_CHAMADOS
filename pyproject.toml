@@ -1,0 +1,16 @@
+[project]
+name = "bot-chamados"
+version = "1.0.0"
+description = "Bot de Discord para gestao de chamados de TI"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+# Foca em erros reais (sintaxe e pyflakes), sem ruido de estilo
+select = ["E9", "F"]

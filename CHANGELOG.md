@@ -18,6 +18,8 @@ O formato segue a ideia de [Keep a Changelog](https://keepachangelog.com/pt-BR/)
   volumes persistentes de dados.
 - Scripts de backup do codigo e da base JSON em `scripts/`.
 - Unidade systemd e agendamento de cron de exemplo em `deploy/`.
+- **Testes automatizados** (`tests/`, pytest) e configuracao de lint (Ruff).
+- Badges de CI, versao do Python e licenca no `README`.
 
 ### Seguranca
 

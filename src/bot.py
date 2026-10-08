@@ -478,7 +478,7 @@ async def dashboard_publicar(interaction: discord.Interaction):
     if not any(role.id in {ROLE_SUPPORT_ID, ROLE_ADMIN_ID} for role in interaction.user.roles):
         await interaction.response.send_message("Você não tem permissão para usar este comando.", ephemeral=True)
         return
-    status, message_id = await publish_or_update_dashboard(interaction.guild, force_new=True)
+    _, message_id = await publish_or_update_dashboard(interaction.guild, force_new=True)
     await interaction.response.send_message(f"Dashboard publicado com sucesso. Message ID: {message_id}", ephemeral=True)
 
 
@@ -487,7 +487,7 @@ async def dashboard_atualizar(interaction: discord.Interaction):
     if not any(role.id in {ROLE_SUPPORT_ID, ROLE_ADMIN_ID} for role in interaction.user.roles):
         await interaction.response.send_message("Você não tem permissão para usar este comando.", ephemeral=True)
         return
-    status, message_id = await publish_or_update_dashboard(interaction.guild)
+    _, message_id = await publish_or_update_dashboard(interaction.guild)
     await interaction.response.send_message(f"Dashboard atualizado com sucesso. Message ID: {message_id}", ephemeral=True)
 
 

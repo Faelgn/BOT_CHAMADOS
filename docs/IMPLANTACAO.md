@@ -11,7 +11,7 @@ persistem fora do repositorio.
 ## Opcao A - Docker Compose (recomendado)
 
 ```bash
-git clone https://github.com/<SEU_USUARIO>/BOT_CHAMADOS.git
+git clone https://github.com/Faelgn/BOT_CHAMADOS.git
 cd BOT_CHAMADOS
 cp .env.example .env      # preencha os valores reais
 mkdir -p data ticket_email_attachments
